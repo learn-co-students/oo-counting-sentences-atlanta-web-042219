@@ -28,11 +28,12 @@ class String
   end
 
   def count_sentences
-  self.split("!"||"?"||".")
+    self.split("!"&&"?"&&".")
     if self == []
       return 0
     else
-      return self.length
+      return self.split("!" && "?" && ".").length
     end
   end
+  binding.pry
 end
