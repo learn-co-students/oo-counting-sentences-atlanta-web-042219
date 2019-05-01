@@ -28,12 +28,6 @@ class String
   end
 
   def count_sentences
-    self.split("!"&&"?"&&".")
-    if self == []
-      return 0
-    else
-      return self.split("!" && "?" && ".").length
-    end
-  end
-  binding.pry
+   self.split(/\.|\?|\!/).delete_if {|w| w.size < 2}.size
+ end
 end
